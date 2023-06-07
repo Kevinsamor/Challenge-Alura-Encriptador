@@ -13,6 +13,8 @@ La letra u es convertida para "ufat"*/
 function btnEncriptar (){
     const textoEncriptado = encriptar(textArea.value)
     mensaje.value = textoEncriptado
+    textArea.value = "";
+    mensaje.style.backgroundimage = none
 }
 
 function encriptar (stringEncriptado){
@@ -30,13 +32,15 @@ function encriptar (stringEncriptado){
 function btnDesencriptado (){
     const textoEncriptado = desencriptar(textArea.value)
     mensaje.value = textoEncriptado
+    textArea.value = "";
+    mensaje.style.backgroundimage = none
 }
 
 function desencriptar (stringEncriptado){
     let matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]]
     stringEncriptado = stringEncriptado.toLowerCase()
 
-    for(i = 1; i < matrizCodigo.length; i++){
+    for(i = 0; i < matrizCodigo.length; i++){
         if(stringEncriptado.includes(matrizCodigo[i][1])){
             stringEncriptado = stringEncriptado.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0])
         }
